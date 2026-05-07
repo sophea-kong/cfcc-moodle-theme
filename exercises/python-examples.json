@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Sum of Two Numbers",
+    "category": "$course$/Python/Fundamentals",
+    "question": "<p>Write a function <code>add(a, b)</code> that takes two numbers and returns their sum.</p>",
+    "template": "def add(a, b):\n    {{ STUDENT_ANSWER }}\n",
+    "templatetype": "Isotopp",
+    "all_or_nothing": false,
+    "default_grade": 100,
+    "penalty": 0,
+    "feedback": "<p>Make sure you use the <code>return</code> keyword.</p>",
+    "tests": [
+      { "testcode": "print(add(2, 3))", "expected": "5\n", "mark": 1.0, "example": true },
+      { "testcode": "print(add(-1, 1))", "expected": "0\n", "mark": 1.0 },
+      { "testcode": "print(add(0, 0))", "expected": "0\n", "mark": 1.0 }
+    ]
+  },
+  {
+    "name": "Is Even?",
+    "category": "$course$/Python/Conditionals",
+    "question": "<p>Write a function <code>is_even(n)</code> that returns <code>True</code> if <code>n</code> is even, and <code>False</code> otherwise.</p>",
+    "template": "def is_even(n):\n    {{ STUDENT_ANSWER }}\n",
+    "templatetype": "Isotopp",
+    "all_or_nothing": false,
+    "default_grade": 100,
+    "penalty": 0,
+    "feedback": "<p>Use the modulo operator <code>%</code>.</p>",
+    "tests": [
+      { "testcode": "print(is_even(4))", "expected": "True\n", "mark": 1.0, "example": true },
+      { "testcode": "print(is_even(7))", "expected": "False\n", "mark": 1.0 }
+    ]
+  },
+  {
+    "name": "Factorial",
+    "category": "$course$/Python/Loops",
+    "question": "<p>Write a function <code>factorial(n)</code> that returns the factorial of a non-negative integer <code>n</code>.</p><p>By convention, 0! = 1.</p>",
+    "template": "def factorial(n):\n    {{ STUDENT_ANSWER }}\n",
+    "templatetype": "Isotopp",
+    "all_or_nothing": true,
+    "default_grade": 100,
+    "penalty": 0,
+    "feedback": "<p>A factorial can be implemented with a loop or recursion.</p>",
+    "tests": [
+      { "testcode": "print(factorial(5))", "expected": "120\n", "mark": 1.0, "example": true },
+      { "testcode": "print(factorial(0))", "expected": "1\n", "mark": 1.0 },
+      { "testcode": "print(factorial(1))", "expected": "1\n", "mark": 1.0 },
+      { "testcode": "print(factorial(10))", "expected": "3628800\n", "mark": 1.0 }
+    ]
+  }
+]

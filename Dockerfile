@@ -46,7 +46,7 @@ RUN { \
 
 # Download Moodle
 WORKDIR /var/www/html
-RUN git clone --depth=1 --branch=MOODLE_401_STABLE https://github.com/moodle/moodle.git /var/www/html \
+RUN git clone --depth=1 --branch=MOODLE_401_STABLE https://github.com/Sliden101/moodle.git /var/www/html \
     && chown -R www-data:www-data /var/www/html
 
 # Create directory for Moodle data
