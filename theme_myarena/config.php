@@ -3,7 +3,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $THEME->name = 'myarena';
 $THEME->parents = ['boost'];
-$THEME->sheets = [];
+$THEME->sheets = [''];
 
 $THEME->layouts = [
     'base' => [

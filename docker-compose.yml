@@ -36,6 +36,7 @@ services:
     volumes:
       - moodle_data:/var/www/html
       - moodledata:/var/www/moodledata
+      - ./theme_myarena:/var/www/html/theme/myarena
     depends_on:
       - mysql
       - jobe
