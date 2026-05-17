@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Sum of Two Integers",
+    "category": "$course$/C/Fundamentals",
+    "question": "<p>Write a C program that reads two integers from stdin and prints their sum.</p>",
+    "template": "#include <stdio.h>\n\nint main() {\n    {{ STUDENT_ANSWER }}\n    return 0;\n}\n",
+    "templatetype": "Isotopp",
+    "all_or_nothing": false,
+    "default_grade": 100,
+    "penalty": 0,
+    "feedback": "<p>Use <code>scanf(\"%d\", &var)</code> to read integers.</p>",
+    "tests": [
+      { "stdin": "2 3", "expected": "5\n", "mark": 1.0, "example": true },
+      { "stdin": "-1 1", "expected": "0\n", "mark": 1.0 },
+      { "stdin": "0 0", "expected": "0\n", "mark": 1.0 },
+      { "stdin": "100 200", "expected": "300\n", "mark": 1.0 }
+    ]
+  },
+  {
+    "name": "Is Prime",
+    "category": "$course$/C/Control Flow",
+    "question": "<p>Write a C program that reads an integer <code>n</code> and prints <code>1</code> if <code>n</code> is prime, otherwise <code>0</code>.</p>",
+    "template": "#include <stdio.h>\n#include <stdbool.h>\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    {{ STUDENT_ANSWER }}\n    return 0;\n}\n",
+    "templatetype": "Isotopp",
+    "all_or_nothing": true,
+    "default_grade": 100,
+    "penalty": 0,
+    "feedback": "<p>Check divisibility from 2 up to sqrt(n).</p>",
+    "tests": [
+      { "stdin": "7", "expected": "1\n", "mark": 1.0, "example": true },
+      { "stdin": "10", "expected": "0\n", "mark": 1.0 },
+      { "stdin": "2", "expected": "1\n", "mark": 1.0 },
+      { "stdin": "1", "expected": "0\n", "mark": 1.0 }
+    ]
+  },
+  {
+    "name": "Reverse a String",
+    "category": "$course$/C/Strings",
+    "question": "<p>Write a C program that reads a string (max 100 characters) and prints it reversed.</p>",
+    "template": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char str[101];\n    fgets(str, 101, stdin);\n    str[strcspn(str, \"\\n\")] = '\\0';\n    {{ STUDENT_ANSWER }}\n    return 0;\n}\n",
+    "templatetype": "Isotopp",
+    "all_or_nothing": false,
+    "default_grade": 100,
+    "penalty": 0,
+    "feedback": "<p>Loop from the end of the string to the beginning, or use two-pointer swapping.</p>",
+    "tests": [
+      { "stdin": "hello", "expected": "olleh\n", "mark": 1.0, "example": true },
+      { "stdin": "racecar", "expected": "racecar\n", "mark": 1.0 }
+    ]
+  }
+]
