@@ -20,7 +20,7 @@ if ($courses) {
     foreach ($courses as $course) {
         if ($course->id == 1) continue;
 
-        $courseurl = new moodle_url('/course/view.php', array('id' => $course->id));
+        $courseurl = new moodle_url('/theme/myarena/course_view.php', array('id' => $course->id));
         
         echo "<div class='col-md-4 mb-4'>";
         echo "    <div class='card dashboard-card h-100 p-3'>";

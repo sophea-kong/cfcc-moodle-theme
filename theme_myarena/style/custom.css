@@ -1,18 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Roboto+Mono:wght@700&display=swap');
 
-/* Global Reset */
+/**
+ * ARENA COMPONENT LIBRARY
+ * -----------------------------------------------------------------------------
+ * 1. Global Reset & Typography
+ * 2. Helper Classes
+ * 3. Core Components (Cards, Buttons, Progress)
+ * 4. Header & Navigation
+ * 5. Module Overrides (Quiz, Forum, etc.)
+ */
+
+/* 1. Global Reset & Typography */
 body { 
     font-family: 'Nunito', sans-serif !important; 
     background-color: #fafafa !important;
     color: #1f2937 !important;
 }
 
-/* Helper Classes */
+/* 2. Helper Classes */
 .font-weight-black { font-weight: 900 !important; }
 .text-orange { color: #ff6b00 !important; }
+.text-tactile-shadow { text-shadow: 2px 2px 0px rgba(0,0,0,0.1); }
 
-/* Dashboard Course Cards Styling */
-.dashboard-card {
+/* 3. Core Components */
+
+/* Tactile Cards */
+.arena-card, .dashboard-card, .tactile-card {
     border: 4px solid #1f2937 !important;
     border-radius: 24px !important;
     box-shadow: 6px 6px 0px #1f2937 !important;
@@ -22,7 +35,7 @@ body {
     margin-bottom: 20px !important;
 }
 
-.dashboard-card:hover {
+.arena-card:hover, .dashboard-card:hover {
     transform: translate(-2px, -2px) !important;
     box-shadow: 8px 8px 0px #1f2937 !important;
 }
@@ -39,19 +52,52 @@ body {
     padding: 0.8rem 1.5rem !important;
     transition: all 0.1s ease;
     text-decoration: none !important;
+    cursor: pointer;
 }
 
-.btn-orange { 
+.btn-tactile.btn-orange { 
     background: #ff6b00 !important; 
     color: white !important; 
     box-shadow: 0 5px 0 #b34a00 !important; 
 }
-.btn-orange:active { 
+.btn-tactile.btn-orange:active { 
     transform: translateY(3px); 
     box-shadow: 0 2px 0 #b34a00 !important; 
 }
 
-/* Progress Bar Gamification */
+.btn-tactile.btn-white { 
+    background: white !important; 
+    color: #1f2937 !important; 
+    box-shadow: 0 5px 0 #d1d5db !important; 
+}
+.btn-tactile.btn-white:active { 
+    transform: translateY(3px); 
+    box-shadow: 0 2px 0 #d1d5db !important; 
+}
+
+/* Small Buttons for Navbar */
+.btn-orange-sm {
+    border: 3px solid #1f2937 !important;
+    border-radius: 12px !important;
+    padding: 0.4rem 1rem !important;
+    font-size: 0.75rem !important;
+    background: #ff6b00 !important;
+    color: white !important;
+    box-shadow: 0 3px 0 #b34a00 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    transition: all 0.1s ease;
+    text-decoration: none !important;
+}
+.btn-orange-sm:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #b34a00 !important;
+}
+
+/* Progress Bars */
 .progress {
     height: 20px !important;
     border: 3px solid #1f2937 !important;
@@ -64,14 +110,7 @@ body {
     background-color: #ff6b00 !important;
 }
 
-/* Hide Moodle's standard block headers for a cleaner game feel */
-.block .card-title {
-    font-weight: 900 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-}
-
-/* Navbar Styling */
+/* 4. Header & Navigation */
 .arena-navbar {
     background: white !important;
     border-bottom: 4px solid #1f2937 !important;
@@ -86,6 +125,7 @@ body {
 .arena-navbar .nav-link {
     color: #1f2937 !important;
     text-transform: uppercase;
+    font-weight: 700;
     font-size: 0.9rem;
     letter-spacing: 1px;
     padding: 0.5rem 1rem !important;
@@ -106,24 +146,38 @@ body {
     background: white;
 }
 
-.btn-orange-sm {
-    background: #ff6b00 !important;
-    color: white !important;
-    box-shadow: 0 3px 0 #b34a00 !important;
-    padding: 0.4rem 1rem !important;
-    font-size: 0.75rem !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid #1f2937 !important;
-    border-radius: 12px !important;
-    font-weight: 900 !important;
-    text-transform: uppercase;
-    transition: all 0.1s ease;
-    text-decoration: none !important;
+/* 5. Module Overrides */
+
+/* Quiz Attempt Page */
+.path-mod-quiz.page-mod-quiz-attempt {
+    background-color: #fffaf0 !important; 
 }
 
-.btn-orange-sm:active {
-    transform: translateY(2px);
-    box-shadow: 0 1px 0 #b34a00 !important;
+.path-mod-quiz.page-mod-quiz-attempt #page {
+    background: transparent !important;
+}
+
+/* Quiz Timer */
+#quiz-timer-wrapper {
+    background: white !important;
+    border: 4px solid #1f2937 !important;
+    border-radius: 20px !important;
+    box-shadow: 6px 6px 0px #1f2937 !important;
+    padding: 1.5rem !important;
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+}
+
+#quiz-timer {
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: #ff6b00 !important;
+}
+
+/* Moodle Block Overrides */
+.block .card-title {
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
 }

@@ -14,13 +14,18 @@ echo $OUTPUT->doctype();
 <?php echo $OUTPUT->standard_top_of_body_html(); ?>
 
 <?php
-$sitename = format_string($SITE->fullname);
 $username = isloggedin() ? fullname($USER) : '';
 $userpicture = isloggedin() ? $OUTPUT->user_picture($USER, array('size' => 35, 'link' => false)) : '';
 $logouturl = new moodle_url('/login/logout.php', array('sesskey' => sesskey()));
 $homeurl = new moodle_url('/theme/myarena/waiting_room.php');
 $dashboardurl = new moodle_url('/my/');
 $challengesurl = new moodle_url('/theme/myarena/courses_list.php');
+
+// Module 2 Task: Get strings from lang file
+$str_rules = get_string('rules', 'theme_myarena');
+$str_challenges = get_string('challenges', 'theme_myarena');
+$str_logout = get_string('logout', 'theme_myarena');
+$str_login = get_string('login', 'theme_myarena');
 ?>
 
 <nav class="navbar navbar-expand-lg arena-navbar mb-4">
@@ -32,10 +37,10 @@ $challengesurl = new moodle_url('/theme/myarena/courses_list.php');
         <div class="collapse navbar-collapse" id="arenaNavbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="<?php echo $dashboardurl; ?>">RULE</a>
+                    <a class="nav-link" href="#"><?php echo $str_rules; ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="<?php echo $challengesurl; ?>">CHALLENGES</a>
+                    <a class="nav-link" href="<?php echo $challengesurl; ?>"><?php echo $str_challenges; ?></a>
                 </li>
             </ul>
             <div class="navbar-nav ml-auto align-items-center">
@@ -44,9 +49,9 @@ $challengesurl = new moodle_url('/theme/myarena/courses_list.php');
                     <div class="nav-item user-avatar mr-3">
                         <?php echo $userpicture; ?>
                     </div>
-                    <a href="<?php echo $logouturl; ?>" class="btn-tactile btn-orange-sm">LOGOUT</a>
+                    <a href="<?php echo $logouturl; ?>" class="btn-orange-sm"><?php echo $str_logout; ?></a>
                 <?php else: ?>
-                    <a href="<?php echo get_login_url(); ?>" class="btn-tactile btn-orange-sm">LOGIN</a>
+                    <a href="<?php echo get_login_url(); ?>" class="btn-orange-sm"><?php echo $str_login; ?></a>
                 <?php endif; ?>
             </div>
         </div>
@@ -59,7 +64,7 @@ $challengesurl = new moodle_url('/theme/myarena/courses_list.php');
             <section id="region-main" class="col-12">
                 <?php echo $OUTPUT->main_content(); ?>
             </section>
-            <!-- Satisfy the Moodle block renderer requirements -->
+            <!-- Module-specific block regions -->
             <aside id="block-region-side-pre" class="col-12 d-none">
                 <?php echo $OUTPUT->blocks('side-pre'); ?>
             </aside>
