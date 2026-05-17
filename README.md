@@ -247,3 +247,4 @@ mysql -hmysql -umoodleuser -pmoodlepass moodle -e "SELECT * FROM mdl_config_plug
 * CodeRunner Documentation: [https://coderunner.org.nz/](https://coderunner.org.nz/)
 * Jobe Documentation: [https://github.com/trampgeek/jobe](https://github.com/trampgeek/jobe)
 * Moodle Docs: [https://docs.moodle.org/](https://docs.moodle.org/)# cfcc-moodle-theme
+# cfcc-moodle-theme
