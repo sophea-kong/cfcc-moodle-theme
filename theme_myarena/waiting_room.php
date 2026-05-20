@@ -127,39 +127,174 @@ echo "
         width: 36px; height: 36px; border-radius: 50%;
         border: 3px solid white; margin-left: -12px;
     }
+
+    /* === GRID BACKGROUND === */
+    #arena-bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .grid-lines {
+        position: absolute;
+        inset: 0;
+        background-image:
+        linear-gradient(rgba(31,41,55,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31,41,55,0.06) 1px, transparent 1px);
+        background-size: 48px 48px;
+    }
+
+    /* === THE ORANGE ORB AND THE PURPLE ORB ON THE BACKGROUND === */
+    .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.18;
+    }
+    .orb-orange {
+        width: 500px; height: 500px;
+        background: #ff6b00;
+        top: -100px; right: -100px;
+        animation: orbFloat1 12s ease-in-out infinite;
+    }
+    .orb-purple {
+        width: 400px; height: 400px;
+        background: #7254b3;
+        bottom: -80px; left: -80px;
+        animation: orbFloat2 15s ease-in-out infinite;
+    }
+
+    /* === MASCOT === */
+    .mascot-wrap {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .mascot-svg-container {
+        animation: mascotFloat 4s ease-in-out infinite;
+        display: inline-block;
+        flex-shrink: 0;
+    }
+
+    @keyframes mascotFloat {
+        0%,100% { transform: translateY(0) rotate(-1deg); }
+        50%      { transform: translateY(-14px) rotate(2deg); }
+    }
+
+    .mascot-bubble {
+        background: white;
+        border: 4px solid #1f2937;
+        border-radius: 20px;
+        padding: 10px 16px;
+        font-size: 13px;
+        font-weight: 900;
+        color: #1f2937;
+        box-shadow: 4px 4px 0 #1f2937;
+        position: relative;
+        line-height: 1.4;
+        max-width: 180px;
+        animation: bubblePop 3s ease-in-out infinite;
+    }
+
+    @keyframes bubblePop {
+        0%,100% { transform: scale(1); }
+        50%      { transform: scale(1.04); }
+    }
+
+    .mascot-bubble::before {
+        content: '';
+        position: absolute;
+        left: -22px; top: 50%;
+        transform: translateY(-50%);
+        border: 10px solid transparent;
+        border-right-color: #1f2937;
+    }
+    .mascot-bubble::after {
+        content: '';
+        position: absolute;
+        left: -14px; top: 50%;
+        transform: translateY(-50%);
+        border: 8px solid transparent;
+        border-right-color: white;
+    }
+
     </style>
 ";
 ?>
+<!-- PAGE BG -->
+<div id="arena-bg">
+  <div class="grid-lines"></div>
+  <div class="orb orb-orange"></div>
+  <div class="orb orb-purple"></div>
+  <div id="particles-container"></div>
+</div>
 
+<!-- PAGE CONTENT -->
 <div class="container" style="max-width: 1200px;">
     <div class="row align-items-center" style="min-height: 85vh;">
         
         <!-- Left Side: The Hype Zone -->
         <div class="col-lg-6 text-center text-lg-left mb-5 mb-lg-0 py-5">
-            <div class="mascot-container mb-5">
-                <svg width="220" height="220" viewBox="0 0 200 200">
-                    <defs>
-                        <radialGradient id="aura-glow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" style="stop-color:#ffeb3b; stop-opacity:0.5" />
-                            <stop offset="100%" style="stop-color:#ffeb3b; stop-opacity:0" />
-                        </radialGradient>
-                    </defs>
-                    <circle cx="100" cy="100" r="90" fill="url(#aura-glow)" />
-                    <path d="M150 60 C 130 30, 70 30, 50 60 C 30 100, 30 140, 50 170 C 70 200, 130 200, 150 170" fill="#ff6b00" stroke="#1f2937" stroke-width="10" stroke-linejoin="round"/>
-                    <path d="M150 85 C 135 70, 95 70, 85 85 C 75 100, 75 140, 85 155 C 95 170, 135 170, 150 155" fill="#fafafa" stroke="#1f2937" stroke-width="8" />
-                    <circle cx="95" cy="100" r="12" fill="#1f2937" />
-                    <circle cx="135" cy="100" r="12" fill="#1f2937" />
-                    <path d="M165 75 Q 172 95, 165 105 Q 158 95, 165 75" fill="#3b82f6">
-                        <animate attributeName="transform" type="translate" from="0 0" to="0 15" dur="1.5s" repeatCount="indefinite" />
-                        <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" />
-                    </path>
-                </svg>
+
+            <!-- MASCOT -->
+            <div class="mascot-wrap">
+                <div class="mascot-container mb-5">
+                    <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Antenna -->
+                        <line x1="55" y1="8" x2="55" y2="22" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="55" cy="5" r="5" fill="#ff6b00" stroke="#1f2937" stroke-width="3"/>
+                        <!-- Head -->
+                        <rect x="18" y="22" width="74" height="58" rx="14" fill="#ff6b00" stroke="#1f2937" stroke-width="4"/>
+                        <!-- Eyes -->
+                        <rect x="28" y="36" width="22" height="18" rx="5" fill="white" stroke="#1f2937" stroke-width="3"/>
+                        <rect x="60" y="36" width="22" height="18" rx="5" fill="white" stroke="#1f2937" stroke-width="3"/>
+                        <!-- Pupils (animated) -->
+                        <rect x="34" y="40" width="10" height="10" rx="2" fill="#1f2937">
+                        <animate attributeName="x" values="34;36;34;32;34" dur="3s" repeatCount="indefinite"/>
+                        </rect>
+                        <rect x="66" y="40" width="10" height="10" rx="2" fill="#1f2937">
+                        <animate attributeName="x" values="66;68;66;64;66" dur="3s" repeatCount="indefinite"/>
+                        </rect>
+                        <!-- Mouth -->
+                        <rect x="30" y="62" width="50" height="10" rx="5" fill="white" stroke="#1f2937" stroke-width="3"/>
+                        <rect x="34" y="65" width="8" height="4" rx="2" fill="#22c55e"/>
+                        <rect x="46" y="65" width="8" height="4" rx="2" fill="#22c55e"/>
+                        <rect x="58" y="65" width="8" height="4" rx="2" fill="#22c55e"/>
+                        <!-- Neck -->
+                        <rect x="44" y="80" width="22" height="10" rx="4" fill="#1f2937"/>
+                        <!-- Body -->
+                        <rect x="10" y="90" width="90" height="54" rx="16" fill="#fafafa" stroke="#1f2937" stroke-width="4"/>
+                        <!-- Screen on body -->
+                        <rect x="22" y="100" width="66" height="32" rx="8" fill="#1f2937"/>
+                        <!-- Code on screen -->
+                        <text x="28" y="113" font-family="monospace" font-size="8" fill="#22c55e" font-weight="700">&gt;_ solving...</text>
+                        <text x="55" y="125" font-family="monospace" font-size="8" fill="#ff6b00" font-weight="700" text-anchor="middle">CFCC</text>
+                        <!-- Ear bolts -->
+                        <circle cx="10" cy="105" r="6" fill="#ff6b00" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="100" cy="105" r="6" fill="#ff6b00" stroke="#1f2937" stroke-width="3"/>
+                    </svg>
+                </div>
+
+                 <div class="mascot-bubble">
+                    Ready to code?<br>
+                    <span style="color:#ff6b00;">Let's GO!</span>
+                </div>
             </div>
 
-            <h1 class="display-3 font-weight-black mb-4" style="line-height: 1.1; font-weight: 900;">
-                The Ultimate <br><span class="wiggle-text">1-Day Showdown</span>
+            
+
+            <h1 class="font-weight-black mb-4" style="line-height: 1.1; font-weight: 900; font-size: 3.2rem;">
+                Welcome Players To <br>
+                <span class="wiggle-text">
+                    <span style="color: #7254b3; display: block;">CADT</span>
+                    <span style="display: block;">Freshman <br>Coding <br>Championship</span>
+                </span>
             </h1>
-            <p class="mb-5 text-muted" style="font-size: 1.6rem; font-weight: 800;">3 Stages. 1 Champion. <br>Warm up your fingers.</p>
+            <p class="mb-5 text-muted" style="font-size: 1.3rem; font-weight: 800;">3 Stages. 1 Champion. <br>Warm up your fingers.</p>
 
             <div class="row" style="max-width: 500px; margin: 0 auto; margin-left: -10px;">
                 <div class="col-6">
@@ -178,12 +313,16 @@ echo "
                 
                 <p class="text-uppercase font-weight-black text-muted mb-2 small" style="letter-spacing: 2px;">Stage 1 Begins In</p>
                 <div class="countdown-display d-flex justify-content-center align-items-center mb-5">
-                    <span id="min-digit">05</span>
-                    <span class="colon mx-2">:</span>
+                    <span id="hr-digit">00</span>
+                    <span class="mx-2">:</span>
+                    <span id="min-digit">00</span>
+                    <span class="mx-2">:</span>
                     <span id="sec-digit">00</span>
                 </div>
 
                 <div class="stats-container mt-4">
+
+                     <!-- TODO: replace this with the actual number of people who registered for the event -->
                     <div class="sub-panel panel-blue mb-3">
                         <div class="bg-white rounded-circle p-2 mr-3" style="border: 2px solid #1f2937;">
                             <i class="fa fa-users text-primary px-1"></i>
@@ -198,7 +337,8 @@ echo "
                             <img src="https://i.pravatar.cc/150?u=c" alt="v">
                         </div>
                     </div>
-
+                    
+                    <!-- TODO: REPLACE THIS WITH SPONSERS -->
                     <div class="sub-panel panel-yellow">
                         <div class="bg-white rounded-circle p-2 mr-3" style="border: 2px solid #1f2937;">
                             <i class="fa fa-trophy text-warning px-1"></i>
@@ -211,25 +351,46 @@ echo "
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
 <script>
     (function() {
-        let totalSeconds = 342;
+
+        const targetDate = new Date("July, 04, 2026").getTime();
+        const now = new Date().getTime();
+
+        const timeDifference = targetDate - now;
+        // convert the remaining time into total seconds
+        const totalSecondsFromTarget = Math.floor(timeDifference / 1000);
+
+
+        // use total seconds computed from target date
+        let totalSeconds = totalSecondsFromTarget;
+        const hrEl = document.getElementById('hr-digit');
         const minEl = document.getElementById('min-digit');
         const secEl = document.getElementById('sec-digit');
 
         const updateTimer = () => {
-            if (totalSeconds <= 0) return;
+            if (totalSeconds <= 0) {
+                hrEl.innerText = '00';
+                minEl.innerText = '00';
+                secEl.innerText = '00';
+                clearInterval(timerInterval);
+                return;
+            }
             totalSeconds--;
-            const mins = Math.floor(totalSeconds / 60);
+            const hrs = Math.floor(totalSeconds / 3600);
+            const mins = Math.floor((totalSeconds % 3600) / 60);
             const secs = totalSeconds % 60;
+            hrEl.innerText = hrs.toString().padStart(2, '0');
             minEl.innerText = mins.toString().padStart(2, '0');
             secEl.innerText = secs.toString().padStart(2, '0');
+            // display days left (from outer calculation)
         };
 
-        setInterval(updateTimer, 1000);
+        const timerInterval = setInterval(updateTimer, 1000);
     })();
 </script>
 
