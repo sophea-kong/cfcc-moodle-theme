@@ -1,4 +1,4 @@
-FROM php:8.0-apache
+FROM php:8.1-apache
 
 # Install PHP extensions required by Moodle
 # Uses a robust retry strategy to handle network issues
@@ -46,7 +46,7 @@ RUN { \
 
 # Download Moodle
 WORKDIR /var/www/html
-RUN git clone --depth=1 --branch=MOODLE_401_STABLE https://github.com/Sliden101/moodle.git /var/www/html \
+RUN git clone --depth=1 --branch=MOODLE_403_STABLE https://github.com/moodle/moodle.git /var/www/html \
     && chown -R www-data:www-data /var/www/html
 
 # Create directory for Moodle data
@@ -60,12 +60,12 @@ RUN for i in 1 2 3; do \
     done && \
     rm -rf /var/lib/apt/lists/*
 
-# Download and install CodeRunner plugin from GitHub (version compatible with Moodle 4.1)
+# Download and install CodeRunner plugin from GitHub (fallback if local volume not used)
 RUN cd /var/www/html/question/type && \
     git clone --depth=1 --branch=v5.2.1 https://github.com/trampgeek/moodle-qtype_coderunner.git coderunner && \
     chown -R www-data:www-data /var/www/html/question/type/coderunner
 
-# Download and install adaptive_adapted_for_coderunner behaviour (compatible version)
+# Download and install adaptive_adapted_for_coderunner behaviour
 RUN cd /var/www/html/question/behaviour && \
     git clone --depth=1 --branch=master https://github.com/trampgeek/moodle-qbehaviour_adaptive_adapted_for_coderunner.git adaptive_adapted_for_coderunner && \
     chown -R www-data:www-data /var/www/html/question/behaviour/adaptive_adapted_for_coderunner

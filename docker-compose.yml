@@ -35,6 +35,8 @@ services:
       - moodle_data:/var/www/html
       - moodledata:/var/www/moodledata
       - ./theme_myarena:/var/www/html/theme/myarena
+      - ./moodle-qtype_coderunner:/var/www/html/question/type/coderunner
+      - ./qbehaviour_adaptive_adapted_for_coderunner:/var/www/html/question/behaviour/adaptive_adapted_for_coderunner
     depends_on:
       - mysql
       - jobe

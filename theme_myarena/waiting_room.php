@@ -5,7 +5,7 @@ require_login();
 $PAGE->set_pagelayout('standard');
 $PAGE->set_url(new moodle_url('/theme/myarena/waiting_room.php'));
 $PAGE->set_context(context_system::instance());
-$PAGE->set_title('The Ultimate 1-Day Showdown');
+$PAGE->set_title('CADT Freshman Coding Championship');
 $PAGE->set_heading('Arena Lobby');
 
 echo $OUTPUT->header();
@@ -16,7 +16,7 @@ echo "
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Roboto+Mono:wght@700&display=swap');
 
     body { 
-        background-color: #fafafa !important; 
+        background-color: #ffffff !important; 
         font-family: 'Nunito', sans-serif; 
         color: #1f2937; 
     }
