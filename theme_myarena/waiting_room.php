@@ -5,7 +5,7 @@ require_login();
 $PAGE->set_pagelayout('standard');
 $PAGE->set_url(new moodle_url('/theme/myarena/waiting_room.php'));
 $PAGE->set_context(context_system::instance());
-$PAGE->set_title('The Ultimate 1-Day Showdown');
+$PAGE->set_title('CADT Freshman Coding Championship');
 $PAGE->set_heading('Arena Lobby');
 
 echo $OUTPUT->header();
@@ -16,7 +16,7 @@ echo "
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Roboto+Mono:wght@700&display=swap');
 
     body { 
-        background-color: #fafafa !important; 
+        background-color: #ffffff !important; 
         font-family: 'Nunito', sans-serif; 
         color: #1f2937; 
     }
@@ -137,27 +137,11 @@ echo "
         <!-- Left Side: The Hype Zone -->
         <div class="col-lg-6 text-center text-lg-left mb-5 mb-lg-0 py-5">
             <div class="mascot-container mb-5">
-                <svg width="220" height="220" viewBox="0 0 200 200">
-                    <defs>
-                        <radialGradient id="aura-glow" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" style="stop-color:#ffeb3b; stop-opacity:0.5" />
-                            <stop offset="100%" style="stop-color:#ffeb3b; stop-opacity:0" />
-                        </radialGradient>
-                    </defs>
-                    <circle cx="100" cy="100" r="90" fill="url(#aura-glow)" />
-                    <path d="M150 60 C 130 30, 70 30, 50 60 C 30 100, 30 140, 50 170 C 70 200, 130 200, 150 170" fill="#ff6b00" stroke="#1f2937" stroke-width="10" stroke-linejoin="round"/>
-                    <path d="M150 85 C 135 70, 95 70, 85 85 C 75 100, 75 140, 85 155 C 95 170, 135 170, 150 155" fill="#fafafa" stroke="#1f2937" stroke-width="8" />
-                    <circle cx="95" cy="100" r="12" fill="#1f2937" />
-                    <circle cx="135" cy="100" r="12" fill="#1f2937" />
-                    <path d="M165 75 Q 172 95, 165 105 Q 158 95, 165 75" fill="#3b82f6">
-                        <animate attributeName="transform" type="translate" from="0 0" to="0 15" dur="1.5s" repeatCount="indefinite" />
-                        <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" />
-                    </path>
-                </svg>
+                <p>HOLY CFCC</p>
             </div>
 
             <h1 class="display-3 font-weight-black mb-4" style="line-height: 1.1; font-weight: 900;">
-                The Ultimate <br><span class="wiggle-text">1-Day Showdown</span>
+                CADT Freshman Coding Championship <br><span class="wiggle-text">Are you ready?</span>
             </h1>
             <p class="mb-5 text-muted" style="font-size: 1.6rem; font-weight: 800;">3 Stages. 1 Champion. <br>Warm up your fingers.</p>
 
