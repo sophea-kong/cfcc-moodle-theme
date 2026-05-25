@@ -16,7 +16,7 @@ echo "
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Roboto+Mono:wght@700&display=swap');
 
     body { 
-        background-color: #fafafa !important; 
+        background-color: #ffffff !important; 
         font-family: 'Nunito', sans-serif; 
         color: #1f2937; 
     }
