@@ -181,3 +181,85 @@ body {
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
 }
+
+
+
+/* login page
+
+/* 1. Define Variables */
+:root {
+    --arena-orange: #ff6b00;
+    --arena-dark: #1f2937;
+}
+
+/* 2. Full-Screen Container */
+#page-login-index #page {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    padding: 20px !important; /* Prevents touching edges on mobile */
+    margin: 0 !important;
+}
+
+/* 3. The Login Card */
+.loginform {
+    border: 6px solid var(--arena-dark) !important;
+    background: white !important;
+    box-shadow: 16px 16px 0px var(--arena-dark) !important;
+    padding: 3rem !important;
+    width: 100% !important;
+    max-width: 450px !important; /* Perfectly sized for desktop/mobile */
+    border-radius: 0 !important;
+}
+
+/* 4. Unified Alignment for Inputs and Buttons */
+#page-login-index .form-control,
+#loginbtn.btn-primary {
+    width: 100% !important; /* Forces alignment */
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+/* 5. Input Field Spacing */
+#page-login-index .form-group {
+    margin-bottom: 1.5rem !important;
+}
+
+#page-login-index .form-control {
+    border: 4px solid var(--arena-dark) !important;
+    border-radius: 0 !important;
+    padding: 1.2rem !important;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+}
+
+/* 6. Aligned Button */
+#loginbtn.btn-primary {
+    background-color: var(--arena-orange) !important;
+    border: 4px solid var(--arena-dark) !important;
+    box-shadow: 8px 8px 0px var(--arena-dark) !important;
+    border-radius: 0 !important;
+    color: white !important;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    padding: 15px !important;
+    transition: none !important;
+    margin-top: 1rem !important;
+}
+
+#loginbtn.btn-primary:active {
+    transform: translate(8px, 8px) !important;
+    box-shadow: none !important;
+}
+
+/* 7. Responsive Fix for Smaller Screens */
+@media (max-width: 480px) {
+    .loginform {
+        padding: 1.5rem !important;
+        border-width: 4px !important;
+    }
+}
