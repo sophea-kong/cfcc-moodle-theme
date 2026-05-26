@@ -62,7 +62,7 @@ RUN for i in 1 2 3; do \
 
 # Download and install CodeRunner plugin from GitHub (fallback if local volume not used)
 RUN cd /var/www/html/question/type && \
-    git clone --depth=1 --branch=v5.2.1 https://github.com/trampgeek/moodle-qtype_coderunner.git coderunner && \
+    git clone --depth=1 --branch=v5.9.2 https://github.com/trampgeek/moodle-qtype_coderunner.git coderunner && \
     chown -R www-data:www-data /var/www/html/question/type/coderunner
 
 # Download and install adaptive_adapted_for_coderunner behaviour
