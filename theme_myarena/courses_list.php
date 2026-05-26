@@ -14,7 +14,7 @@ echo $OUTPUT->header();
 $courses = $DB->get_records('course', array('visible' => 1), 'fullname ASC');
 
 echo "<div class='container py-5'>";
-echo "    <div class='row'>";
+echo "    <div class='row justify-content-center'>";
 
 if ($courses) {
     foreach ($courses as $course) {
@@ -22,7 +22,7 @@ if ($courses) {
 
         $courseurl = new moodle_url('/theme/myarena/course_view.php', array('id' => $course->id));
         
-        echo "<div class='col-md-4 mb-4'>";
+        echo "<div class='col-md-8 mb-4'>";
         echo "    <div class='card dashboard-card h-100 p-3'>";
         echo "        <div class='card-body text-center d-flex flex-column'>";
         echo "            <h4 class='font-weight-black mb-2'>{$course->fullname}</h4>";
@@ -38,5 +38,6 @@ if ($courses) {
 
 echo "    </div>";
 echo "</div>";
+echo "<p>Hello pleasee</p>"; // Add spacing between cards on smaller screens.
 
 echo $OUTPUT->footer();
