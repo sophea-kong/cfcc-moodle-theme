@@ -234,8 +234,8 @@ echo "
 </div>
 
 <!-- PAGE CONTENT -->
-<div class="container" style="max-width: 1200px;">
-    <div class="row align-items-center" style="min-height: 85vh;">
+<div class="container mx-auto" style="max-width: 1200px;">
+    <div class="row align-items-center justify-content-center" style="min-height: 70vh;">
         
         <!-- Left Side: The Hype Zone -->
         <div class="col-lg-6 text-center text-lg-left mb-5 mb-lg-0 py-5">
@@ -290,28 +290,35 @@ echo "
             <h1 class="font-weight-black mb-4" style="line-height: 1.1; font-weight: 900; font-size: 3.2rem;">
                 Welcome Players To <br>
                 <span class="wiggle-text">
-                    <span style="color: #7254b3; display: block;">CADT</span>
-                    <span style="display: block;">Freshman <br>Coding <br>Championship</span>
+                    <!-- <span style="color: #7254b3; display: block;">CADT</span>
+                    <span style="display: block;">Freshman <br>Coding <br>Championship</span> -->
+                    <span>
+                        <p style="color: #7254b3;">CADT</p> Freshman Coding Championship
+                    </span>
                 </span>
             </h1>
             <p class="mb-5 text-muted" style="font-size: 1.3rem; font-weight: 800;">3 Stages. 1 Champion. <br>Warm up your fingers.</p>
 
             <div class="row" style="max-width: 500px; margin: 0 auto; margin-left: -10px;">
                 <div class="col-6">
-                    <a href="#" class="btn-tactile btn-white"><i class="fa fa-book mr-2"></i> Rules</a>
+                    <a href="#" class="btn-tactile btn-white">
+                        <i class="fa fa-book mr-2"></i> Rules
+                    </a>
                 </div>
                 <div class="col-6">
-                    <a href="<?php echo new moodle_url('/theme/myarena/course_view.php?id=2'); ?>" class="btn-tactile btn-orange"><i class="fa fa-bolt mr-2"></i> Enter</a>
+                    <a  id="enter-btn" href="<?php echo new moodle_url('/theme/myarena/course_view.php?id=2'); ?>" class="btn-tactile btn-orange">
+                        <i class="fa fa-bolt mr-2"></i> Enter
+                    </a>
                 </div>
             </div>
         </div>
-
+        
         <!-- Right Side: Info & Countdown Zone -->
-        <div class="col-lg-6 px-4">
+        <!-- <div class="col-lg-6 px-4">
             <div class="tactile-card p-5 text-center">
                 <div class="ribbon">LIVE SOON</div>
                 
-                <p class="text-uppercase font-weight-black text-muted mb-2 small" style="letter-spacing: 2px;">Stage 1 Begins In</p>
+                <p class="text-uppercase font-weight-black text-muted mb-2 small" style="letter-spacing: 2px;">Competition Begins In</p>
                 <div class="countdown-display d-flex justify-content-center align-items-center mb-5">
                     <span id="hr-digit">00</span>
                     <span class="mx-2">:</span>
@@ -322,7 +329,6 @@ echo "
 
                 <div class="stats-container mt-4">
 
-                     <!-- TODO: replace this with the actual number of people who registered for the event -->
                     <div class="sub-panel panel-blue mb-3">
                         <div class="bg-white rounded-circle p-2 mr-3" style="border: 2px solid #1f2937;">
                             <i class="fa fa-users text-primary px-1"></i>
@@ -338,7 +344,6 @@ echo "
                         </div>
                     </div>
                     
-                    <!-- TODO: REPLACE THIS WITH SPONSERS -->
                     <div class="sub-panel panel-yellow">
                         <div class="bg-white rounded-circle p-2 mr-3" style="border: 2px solid #1f2937;">
                             <i class="fa fa-trophy text-warning px-1"></i>
@@ -350,7 +355,7 @@ echo "
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>
@@ -391,6 +396,16 @@ echo "
         };
 
         const timerInterval = setInterval(updateTimer, 1000);
+
+        
+        const enterBtn = document.getElementById('enter-btn');
+        enterBtn.addEventListener('click', (e) => {
+            if (totalSeconds > 0) {
+                e.preventDefault();
+                // alert('The arena is not open yet! Please wait for the countdown to finish.');
+            }
+        });
+
     })();
 </script>
 
