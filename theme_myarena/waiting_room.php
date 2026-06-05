@@ -95,7 +95,7 @@ echo "
     /* Countdown Styling */
     .countdown-display { 
         font-family: 'Roboto Mono', monospace; 
-        font-size: 5.5rem; 
+        font-size: 2.5rem; 
         color: #ff6b00; 
         font-weight: 700;
         line-height: 1;
@@ -124,8 +124,10 @@ echo "
     .panel-yellow { background: #fef9c3; }
 
     .avatar-cluster img {
-        width: 36px; height: 36px; border-radius: 50%;
+        width: 1000px; height: 150px; border-radius: 0%;
         border: 3px solid white; margin-left: -12px;
+        margin-right: 60px;
+        margin-left: 60px;
     }
 
     /* === GRID BACKGROUND === */
@@ -222,6 +224,26 @@ echo "
         border-right-color: white;
     }
 
+    .marquee-wrapper {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 20s linear infinite;
+    }
+
+    .marquee-track img {
+        margin-right: 3rem; /* ← gap lives here now, included in width calc */
+    }
+
+    @keyframes marquee {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
     </style>
 ";
 ?>
@@ -235,10 +257,10 @@ echo "
 
 <!-- PAGE CONTENT -->
 <div class="container mx-auto" style="max-width: 1200px;">
-    <div class="row align-items-center justify-content-center" style="min-height: 70vh;">
+    <div class="row align-items-center justify-content-center" style="min-height: 20vh;">
         
-        <!-- Left Side: The Hype Zone -->
-        <div class="col-lg-6 text-center text-lg-left mb-5 mb-lg-0 py-5">
+        <!-- HERO SECTION -->
+        <div class="col-lg-10 text-center mb-5 mb-lg-0 py-5">
 
             <!-- MASCOT -->
             <div class="mascot-wrap">
@@ -293,13 +315,22 @@ echo "
                     <!-- <span style="color: #7254b3; display: block;">CADT</span>
                     <span style="display: block;">Freshman <br>Coding <br>Championship</span> -->
                     <span>
-                        <p style="color: #7254b3;">CADT</p> Freshman Coding Championship
+                        <span style="color: #7254b3;">CADT</span> Freshman Coding Championship
                     </span>
                 </span>
             </h1>
-            <p class="mb-5 text-muted" style="font-size: 1.3rem; font-weight: 800;">3 Stages. 1 Champion. <br>Warm up your fingers.</p>
+            <p class="mb-5 text-muted" style="font-size: 1.3rem; font-weight: 800;">3 Stages. 1 Champion. Warm up your fingers.</p>
+    
+            <!-- CLOCK -->
+            <div class="countdown-display d-flex justify-content-center align-items-center mb-5">
+                <span id="hr-digit">00</span>
+                <span class="mx-2">:</span>
+                <span id="min-digit">00</span>
+                <span class="mx-2">:</span>
+                <span id="sec-digit">00</span>
+            </div>
 
-            <div class="row" style="max-width: 500px; margin: 0 auto; margin-left: -10px;">
+            <div class="row" style="max-width: 500px; margin: 0 auto; margin-left: 0 auto;">
                 <div class="col-6">
                     <a href="#" class="btn-tactile btn-white">
                         <i class="fa fa-book mr-2"></i> Rules
@@ -312,51 +343,40 @@ echo "
                 </div>
             </div>
         </div>
+
+        <div class="col-12 d-flex flex-column align-items-center justify-content-center mt-4">
+            <!-- SPONSORED BY PANEL -->
+            <p>Sponsored by</p>
+            <div class="marquee-wrapper">
+                <div class="marquee-track">
+                    <!-- Original set -->
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <!-- Duplicate set -->
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <!-- Original set -->
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <!-- Duplicate set -->
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <!-- Original set -->
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <!-- Duplicate set -->
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                    <img src="./assets/CFCC FULL 2.png" alt="ifk" height="40px" style="object-fit: fill;">
+                </div>
+            </div> 
+        </div>
         
-        <!-- Right Side: Info & Countdown Zone -->
-        <!-- <div class="col-lg-6 px-4">
-            <div class="tactile-card p-5 text-center">
-                <div class="ribbon">LIVE SOON</div>
-                
-                <p class="text-uppercase font-weight-black text-muted mb-2 small" style="letter-spacing: 2px;">Competition Begins In</p>
-                <div class="countdown-display d-flex justify-content-center align-items-center mb-5">
-                    <span id="hr-digit">00</span>
-                    <span class="mx-2">:</span>
-                    <span id="min-digit">00</span>
-                    <span class="mx-2">:</span>
-                    <span id="sec-digit">00</span>
-                </div>
-
-                <div class="stats-container mt-4">
-
-                    <div class="sub-panel panel-blue mb-3">
-                        <div class="bg-white rounded-circle p-2 mr-3" style="border: 2px solid #1f2937;">
-                            <i class="fa fa-users text-primary px-1"></i>
-                        </div>
-                        <div class="flex-grow-1">
-                            <span class="d-block h5 mb-0 font-weight-black">4,281 registered</span>
-                            <small class="text-muted font-weight-bold">Participants joined the fight</small>
-                        </div>
-                        <div class="avatar-cluster d-none d-md-flex">
-                            <img src="https://i.pravatar.cc/150?u=a" alt="v">
-                            <img src="https://i.pravatar.cc/150?u=b" alt="v">
-                            <img src="https://i.pravatar.cc/150?u=c" alt="v">
-                        </div>
-                    </div>
-                    
-                    <div class="sub-panel panel-yellow">
-                        <div class="bg-white rounded-circle p-2 mr-3" style="border: 2px solid #1f2937;">
-                            <i class="fa fa-trophy text-warning px-1"></i>
-                        </div>
-                        <div>
-                            <span class="d-block h5 mb-0 font-weight-black">50,000 Gems + Badge</span>
-                            <small class="text-muted font-weight-bold">Victory Reward Pool</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
     </div>
 </div>
 
@@ -401,7 +421,7 @@ echo "
         const enterBtn = document.getElementById('enter-btn');
         enterBtn.addEventListener('click', (e) => {
             if (totalSeconds > 0) {
-                e.preventDefault();
+                // e.preventDefault();
                 // alert('The arena is not open yet! Please wait for the countdown to finish.');
             }
         });
