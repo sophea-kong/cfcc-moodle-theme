@@ -1,0 +1,771 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@700&display=swap');
+
+/**
+ * ARENA COMPONENT LIBRARY
+ * -----------------------------------------------------------------------------
+ * 1. Global Reset & Typography
+ * 2. Helper Classes
+ * 3. Core Components (Cards, Buttons, Progress)
+ * 4. Header & Navigation
+ * 5. Module Overrides (Quiz, Forum, etc.)
+ */
+
+/* 1. Global Reset & Typography */
+body { 
+    font-family: 'Nunito', sans-serif !important; 
+    background-color: #fafafa !important;
+    color: #1f2937 !important;
+}
+
+/* 2. Helper Classes */
+.font-weight-black { font-weight: 900 !important; }
+.text-orange { color: #ff6b00 !important; }
+.text-tactile-shadow { text-shadow: 2px 2px 0px rgba(0,0,0,0.1); }
+
+/* 3. Core Components */
+
+/* Tactile Cards */
+.arena-card, .dashboard-card, .tactile-card {
+    border: 4px solid #1f2937 !important;
+    border-radius: 24px !important;
+    box-shadow: 6px 6px 0px #1f2937 !important;
+    transition: transform 0.1s ease !important;
+    background: white !important;
+    overflow: hidden !important;
+    margin-bottom: 20px !important;
+}
+
+.arena-card:hover, .dashboard-card:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 8px 8px 0px #1f2937 !important;
+}
+
+/* Tactile Buttons */
+.btn-tactile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #1f2937 !important;
+    border-radius: 16px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    padding: 0.8rem 1.5rem !important;
+    transition: all 0.1s ease;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.btn-tactile.btn-orange { 
+    background: #ff6b00 !important; 
+    color: white !important; 
+    box-shadow: 0 5px 0 #b34a00 !important; 
+}
+.btn-tactile.btn-orange:active { 
+    transform: translateY(3px); 
+    box-shadow: 0 2px 0 #b34a00 !important; 
+}
+
+.btn-tactile.btn-white { 
+    background: white !important; 
+    color: #1f2937 !important; 
+    box-shadow: 0 5px 0 #d1d5db !important; 
+}
+.btn-tactile.btn-white:active { 
+    transform: translateY(3px); 
+    box-shadow: 0 2px 0 #d1d5db !important; 
+}
+
+/* Small Buttons for Navbar */
+.btn-orange-sm {
+    border: 3px solid #1f2937 !important;
+    border-radius: 12px !important;
+    padding: 0.4rem 1rem !important;
+    font-size: 0.75rem !important;
+    background: #ff6b00 !important;
+    color: white !important;
+    box-shadow: 0 3px 0 #b34a00 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    transition: all 0.1s ease;
+    text-decoration: none !important;
+}
+.btn-orange-sm:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #b34a00 !important;
+}
+
+/* Progress Bars */
+.progress {
+    height: 20px !important;
+    border: 3px solid #1f2937 !important;
+    border-radius: 12px !important;
+    background-color: #e5e7eb !important;
+    overflow: hidden !important;
+}
+
+.progress-bar {
+    background-color: #ff6b00 !important;
+}
+
+/* 4. Header & Navigation */
+.arena-navbar {
+    background: white !important;
+    border-bottom: 4px solid #1f2937 !important;
+    padding: 1rem 2rem !important;
+}
+
+.arena-navbar .navbar-brand {
+    font-size: 1.8rem !important;
+    letter-spacing: -1px;
+}
+
+.arena-navbar .nav-link {
+    color: #1f2937 !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.5rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.arena-navbar .nav-link:hover {
+    background-color: #f3f4f6;
+    color: #ff6b00 !important;
+}
+
+.user-avatar img {
+    border: 3px solid #1f2937 !important;
+    border-radius: 50% !important;
+    padding: 2px;
+    background: white;
+}
+
+/* 5. Module Overrides */
+
+/* Quiz Attempt Page */
+.path-mod-quiz.page-mod-quiz-attempt {
+    background-color: #fffaf0 !important; 
+}
+
+.path-mod-quiz.page-mod-quiz-attempt #page {
+    background: transparent !important;
+}
+
+/* Quiz Timer */
+#quiz-timer-wrapper {
+    background: white !important;
+    border: 4px solid #1f2937 !important;
+    border-radius: 20px !important;
+    box-shadow: 6px 6px 0px #1f2937 !important;
+    padding: 1.5rem !important;
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+}
+
+#quiz-timer {
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: #ff6b00 !important;
+}
+
+/* Moodle Block Overrides */
+.block .card-title {
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+
+
+/* login page
+
+/* 1. Define Variables */
+:root {
+    --arena-orange: #ff6b00;
+    --arena-dark: #1f2937;
+}
+
+/* 2. Full-Screen Container */
+#page-login-index #page {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    padding: 20px !important; /* Prevents touching edges on mobile */
+    margin: 0 !important;
+}
+
+/* 3. The Login Card */
+.loginform {
+    border: 6px solid var(--arena-dark) !important;
+    background: white !important;
+    box-shadow: 16px 16px 0px var(--arena-dark) !important;
+    padding: 3rem !important;
+    width: 100% !important;
+    max-width: 450px !important; /* Perfectly sized for desktop/mobile */
+    border-radius: 0 !important;
+}
+
+/* 4. Unified Alignment for Inputs and Buttons */
+#page-login-index .form-control,
+#loginbtn.btn-primary {
+    width: 100% !important; /* Forces alignment */
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+/* 5. Input Field Spacing */
+#page-login-index .form-group {
+    margin-bottom: 1.5rem !important;
+}
+
+#page-login-index .form-control {
+    border: 4px solid var(--arena-dark) !important;
+    border-radius: 0 !important;
+    padding: 1.2rem !important;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+}
+
+/* 6. Aligned Button */
+#loginbtn.btn-primary {
+    background-color: var(--arena-orange) !important;
+    border: 4px solid var(--arena-dark) !important;
+    box-shadow: 8px 8px 0px var(--arena-dark) !important;
+    border-radius: 0 !important;
+    color: white !important;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    padding: 15px !important;
+    transition: none !important;
+    margin-top: 1rem !important;
+}
+
+#loginbtn.btn-primary:active {
+    transform: translate(8px, 8px) !important;
+    box-shadow: none !important;
+}
+
+/* 7. Responsive Fix for Smaller Screens */
+@media (max-width: 480px) {
+    .loginform {
+        padding: 1.5rem !important;
+        border-width: 4px !important;
+    }
+}
+
+
+table {
+    width: 50% !important;
+    border: 3px solid #1f2937 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    color : #1f2937 !important;
+    border-collapse:unset;
+}
+
+table thead{
+    background-color: #e57979;
+}
+
+.table-responsive {
+    display: flex;
+    justify-content: center;
+}
+
+/* button {
+    border: 4px solid #1f2937 !important;
+    border-radius: 16px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    padding: 0.8rem 1.5rem !important;
+    transition: all 0.1s ease;
+    text-decoration: none !important;
+    cursor: pointer;
+    background: #ff6b00 !important; 
+    color: white !important; 
+    box-shadow: 0 5px 0 #b34a00 !important; 
+} */
+
+.path-mod-quiz .page-mod-quiz-view{
+    background-color: #000000 !important;
+}
+
+.btn-primary{
+    background: #e57979 !important; 
+    color: white !important; 
+    box-shadow: 0 5px 0 #b34a00 !important;
+    justify-self: center !important;
+    align-self: center !important;
+}
+.path-mod-quiz .page-mod-quiz-view .tertiary-navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#region-main h3{
+    display : flex;
+    justify-content: center;
+}
+
+
+#page-mod-quiz-view .quizinfo, #page-mod-quiz-view #page .quizgradefeedback {
+    display :flex;
+    justify-content: center;
+}
+
+/* Center the re-attempt button at the bottom of the quiz view page */
+.path-mod-quiz .page-mod-quiz-view .quizattempt,
+.path-mod-quiz .page-mod-quiz-view .singlebutton {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#page-mod-quiz-view .tertiary-navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.que.coderunner div.coderunner-test-results .cell.c4 pre, .que.coderunner div.coderunner-examples .cell.c4 pre {
+    background-color: #000000b5;
+    width: 500px;
+    height: auto;
+    color: rgb(0, 255, 0);
+    padding : 10px;
+    padding-left: 20px;
+}
+
+
+.que.coderunner div.coderunner-test-results .cell.c4 pre::before, .que.coderunner div.coderunner-examples .cell.c4 pre::before {
+    content: '> Terminal\a';
+    color: rgb(255, 255, 255);
+}
+
+/* --- Premium Quiz Attempt & CodeRunner Enhancements --- */
+
+/* Question Box Container */
+.que {
+    border: 4px solid #1f2937 !important;
+    border-radius: 24px !important;
+    box-shadow: 8px 8px 0px #1f2937 !important;
+    background: white !important;
+    padding: 2rem !important;
+    margin-bottom: 2.5rem !important;
+    transition: transform 0.2s ease;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Question Info Box (Top Status Bar) */
+.que .info {
+    background: #f9fafb !important;
+    border: 3px solid #1f2937 !important;
+    border-radius: 18px !important;
+    padding: 0.9rem 1.4rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 4px 4px 0px #1f2937 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 1.25rem !important;
+}
+
+.que .content {
+    width: 100% !important;
+    margin-left: 0 !important;
+    float: none !important;
+}
+
+/* Question Number Style */
+.que .info .no {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 1.25rem !important;
+    font-weight: 900 !important;
+    margin-bottom: 0 !important;
+    color: #1f2937 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Question State Badge */
+.que .info .state {
+    background: #e0f2fe !important;
+    color: #0369a1 !important;
+    border: 2px solid #1f2937 !important;
+    border-radius: 8px !important;
+    padding: 0.25rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    box-shadow: 2px 2px 0px #1f2937 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Question Grade/Marks Badge */
+.que .info .grade {
+    background: #fef9c3 !important;
+    color: #854d0e !important;
+    border: 2px solid #1f2937 !important;
+    border-radius: 8px !important;
+    padding: 0.25rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    box-shadow: 2px 2px 0px #1f2937 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Code Editor & Input Fields */
+.que.coderunner textarea, 
+.que.coderunner .ace_editor, 
+.que.coderunner .coderunner-code-input {
+    border: 4px solid #1f2937 !important;
+    border-radius: 16px !important;
+    font-family: 'Roboto Mono', monospace !important;
+    box-shadow: 4px 4px 0px #1f2937 !important;
+    background-color: #f9fafb !important;
+    padding: 10px !important;
+}
+
+/* Submit and Action Buttons inside questions */
+.que .submit input[type="submit"], 
+.que.coderunner input.submit, 
+.path-mod-quiz .submitbtns input[type="submit"] {
+    background: #ff6b00 !important;
+    color: white !important;
+    border: 3px solid #1f2937 !important;
+    border-radius: 14px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    padding: 0.6rem 1.4rem !important;
+    box-shadow: 0 4px 0 #b34a00 !important;
+    transition: all 0.1s ease !important;
+    cursor: pointer;
+    font-size: 0.95rem !important;
+}
+.que .submit input[type="submit"]:active, 
+.que.coderunner input.submit:active, 
+.path-mod-quiz .submitbtns input[type="submit"]:active {
+    transform: translateY(2px) !important;
+    box-shadow: 0 2px 0 #b34a00 !important;
+}
+
+/* CodeRunner Test Results Tables */
+.que.coderunner table.coderunner-test-results {
+    width: 100% !important;
+    border: 4px solid #1f2937 !important;
+    border-radius: 20px !important;
+    box-shadow: 6px 6px 0px #1f2937 !important;
+    overflow: hidden !important;
+    margin-top: 2rem !important;
+    border-collapse: separate !important;
+    background: white;
+}
+.que.coderunner table.coderunner-test-results th {
+    background-color: #7254b3 !important;
+    color: white !important;
+    font-weight: 900 !important;
+    border-bottom: 4px solid #1f2937 !important;
+    padding: 12px 16px !important;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+.que.coderunner table.coderunner-test-results td {
+    border-bottom: 3px solid #1f2937 !important;
+    padding: 10px 16px !important;
+    font-weight: 800 !important;
+    font-size: 0.95rem;
+}
+.que.coderunner table.coderunner-test-results tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Green and Red test indicators */
+.que.coderunner table.coderunner-test-results td.passed,
+.que.coderunner table.coderunner-test-results tr.correct {
+    background-color: #dcfce7 !important;
+    color: #15803d !important;
+}
+.que.coderunner table.coderunner-test-results td.failed,
+.que.coderunner table.coderunner-test-results tr.incorrect {
+    background-color: #fee2e2 !important;
+    color: #b91c1c !important;
+}
+
+/* Quiz Navigation Block Overrides */
+#mod_quiz_navblock, 
+.path-mod-quiz #mod_quiz_navblock,
+.path-mod-quiz .card.menu-navigation {
+    border: 4px solid #1f2937 !important;
+    border-radius: 24px !important;
+    box-shadow: 6px 6px 0px #1f2937 !important;
+    background: white !important;
+    padding: 1.5rem !important;
+}
+
+.path-mod-quiz #mod_quiz_navblock .card-title {
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    color: #1f2937 !important;
+    font-size: 1.1rem !important;
+    border-bottom: 3px solid #1f2937 !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton {
+    border: 3px solid #1f2937 !important;
+    border-radius: 10px !important;
+    box-shadow: 2px 2px 0px #1f2937 !important;
+    font-weight: 900 !important;
+    transition: all 0.1s ease !important;
+    margin: 4px !important;
+    width: 36px !important;
+    height: 36px !important;
+    line-height: 30px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+}
+.path-mod-quiz #mod_quiz_navblock .qnbutton:active {
+    transform: translate(1px, 1px) !important;
+    box-shadow: 1px 1px 0px #1f2937 !important;
+}
+.path-mod-quiz #mod_quiz_navblock .qnbutton.notyetanswered {
+    background: white !important;
+    color: #1f2937 !important;
+}
+.path-mod-quiz #mod_quiz_navblock .qnbutton.answersaved,
+.path-mod-quiz #mod_quiz_navblock .qnbutton.correct {
+    background: #7254b3 !important;
+    color: white !important;
+}
+.path-mod-quiz #mod_quiz_navblock .qnbutton.incorrect {
+    background: #ff6b00 !important;
+    color: white !important;
+}
+
+/* Finish attempt link styling */
+.path-mod-quiz #mod_quiz_navblock .endtestlink {
+    display: block !important;
+    text-align: center !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    color: #ff6b00 !important;
+    margin-top: 1.25rem !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px;
+}
+.path-mod-quiz #mod_quiz_navblock .endtestlink:hover {
+    color: #b34a00 !important;
+    text-decoration: underline !important;
+}
+
+/* Bottom Question Navigation Buttons (Next / Previous) */
+.path-mod-quiz .submitbtns {
+    display: flex !important;
+    gap: 1rem !important;
+    margin-top: 2.5rem !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+.path-mod-quiz .submitbtns input[type="submit"],
+.path-mod-quiz .submitbtns a {
+    background: white !important;
+    color: #1f2937 !important;
+    border: 3px solid #1f2937 !important;
+    border-radius: 14px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    padding: 0.6rem 1.4rem !important;
+    box-shadow: 0 4px 0 #d1d5db !important;
+    transition: all 0.1s ease !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    font-size: 0.95rem !important;
+}
+.path-mod-quiz .submitbtns input[type="submit"] {
+    background: #ff6b00 !important;
+    color: white !important;
+    box-shadow: 0 4px 0 #b34a00 !important;
+}
+.path-mod-quiz .submitbtns input[type="submit"]:active {
+    transform: translateY(2px) !important;
+    box-shadow: 0 2px 0 #b34a00 !important;
+}
+.path-mod-quiz .submitbtns a:active {
+    transform: translateY(2px) !important;
+    box-shadow: 0 2px 0 #d1d5db !important;
+}
+
+/* Quiz Review Summary Table Override */
+.generaltable.generalbox.quizreviewsummary {
+    width: 100% !important;
+    max-width: 800px !important;
+    margin: 2.5rem auto !important;
+    border: 4px solid #1f2937 !important;
+    border-radius: 24px !important;
+    box-shadow: 8px 8px 0px #1f2937 !important;
+    overflow: hidden !important;
+    border-collapse: separate !important;
+    background: white !important;
+}
+.generaltable.generalbox.quizreviewsummary th.cell,
+.generaltable.generalbox.quizreviewsummary th {
+    background-color: #7254b3 !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 4px solid #1f2937 !important;
+    padding: 14px 20px !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+.generaltable.generalbox.quizreviewsummary td.cell,
+.generaltable.generalbox.quizreviewsummary td {
+    border-bottom: 3px solid #1f2937 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding: 12px 20px !important;
+    font-weight: 800 !important;
+    color: #1f2937 !important;
+    font-size: 0.95rem !important;
+}
+.generaltable.generalbox.quizreviewsummary tr:last-child td {
+    border-bottom: none !important;
+}
+.generaltable.generalbox.quizreviewsummary tr:nth-child(even) {
+    background-color: #f9fafb !important;
+}
+
+#page {
+    margin-top: 0 !important;
+}
+
+/* Hide Moodle's default 'Back to the course' activity navigation */
+#page-mod-quiz-view .activity-navigation {
+    display: none !important;
+}
+
+/* Hide other potential 'back to course' elements */
+#page-mod-quiz-view .tertiary-navigation .btn-secondary[href*="course/view.php"],
+#page-mod-quiz-view .backlink {
+    display: none !important;
+}
+
+/* Hide dynamic Moodle single_button pointing back to course */
+#page-mod-quiz-view .singlebutton form[action*="course/view.php"],
+#page-mod-quiz-view form[action*="course/view.php"] .singlebutton,
+#page-mod-quiz-view form[action*="course/view.php"] {
+    display: none !important;
+}
+
+/* Custom styling for the back button on quiz view */
+.custom-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #1f2937 !important;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 0 #e5e7eb;
+    border-radius: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    text-decoration: none !important;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.custom-back-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 transparent;
+}
+
+@media (min-width: 576px) {
+    #page-wrapper #page #page-content {
+        flex: 0 0 auto !important;
+        background-color: white !important;
+    }
+}
+
+/* Question Description Dropdowns (details/summary) */
+details.question-section {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+details.question-section summary {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    list-style: none;
+}
+
+details.question-section summary::-webkit-details-marker {
+    display: none;
+}
+
+details.question-section summary::before {
+    content: '▶';
+    font-size: 0.8em;
+    margin-right: 12px;
+    color: #4b5563;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+details.question-section[open] summary::before {
+    transform: rotate(90deg);
+}
+
+details.question-section .question-content {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+}
+
+.question-content .dark-code {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 1rem;
+    border-radius: 6px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    border: none;
+}

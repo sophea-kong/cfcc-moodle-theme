@@ -1,7 +1,7 @@
 <?php
 defined('MOODLE_INTERNAL') || die();
 
-$THEME->name = 'myarena';
+$THEME->name = 'cfcc';
 $THEME->parents = ['boost'];
 $THEME->sheets = ['custom'];
 

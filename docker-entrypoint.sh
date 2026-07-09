@@ -42,6 +42,10 @@ global \$CFG;
 \$CFG->directorypermissions = 02777;
 \$CFG->admin = 'admin';
 
+// Force the default home page to be the site home (landing page) instead of dashboard (/my/)
+\$CFG->defaulthomepage = 0;
+
+
 require_once(__DIR__ . '/lib/setup.php');
 EOF
     chown www-data:www-data /var/www/html/config.php

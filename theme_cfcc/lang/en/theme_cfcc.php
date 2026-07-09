@@ -1,5 +1,5 @@
 <?php
-$string['pluginname'] = 'MyArena';
+$string['pluginname'] = 'CFCC';
 $string['dashboard'] = 'Dashboard';
 $string['challenges'] = 'Challenges';
 $string['logout'] = 'Logout';
